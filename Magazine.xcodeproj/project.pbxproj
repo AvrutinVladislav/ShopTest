@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		57B3BE142C69FDC1008BE104 /* MagazineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE132C69FDC1008BE104 /* MagazineApp.swift */; };
-		57B3BE162C69FDC1008BE104 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE152C69FDC1008BE104 /* ContentView.swift */; };
+		57B3BE162C69FDC1008BE104 /* MagazineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE152C69FDC1008BE104 /* MagazineView.swift */; };
 		57B3BE182C69FDC2008BE104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B3BE172C69FDC2008BE104 /* Assets.xcassets */; };
 		57B3BE1B2C69FDC2008BE104 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B3BE1A2C69FDC2008BE104 /* Preview Assets.xcassets */; };
+		57B3BE222C6A019B008BE104 /* MagazineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE212C6A019B008BE104 /* MagazineViewModel.swift */; };
+		57B3BE242C6A02D5008BE104 /* ProductGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE232C6A02D5008BE104 /* ProductGridCell.swift */; };
+		57B3BE262C6A02E0008BE104 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE252C6A02E0008BE104 /* ProductListCell.swift */; };
+		57B3BE292C6A0E54008BE104 /* CustomCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE282C6A0E54008BE104 /* CustomCornerView.swift */; };
+		57B3BE2B2C6A11BD008BE104 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE2A2C6A11BD008BE104 /* ProductModel.swift */; };
+		57B3BE3A2C6E044A008BE104 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE392C6E044A008BE104 /* CellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57B3BE102C69FDC1008BE104 /* Magazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B3BE132C69FDC1008BE104 /* MagazineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineApp.swift; sourceTree = "<group>"; };
-		57B3BE152C69FDC1008BE104 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		57B3BE152C69FDC1008BE104 /* MagazineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineView.swift; sourceTree = "<group>"; };
 		57B3BE172C69FDC2008BE104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B3BE1A2C69FDC2008BE104 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57B3BE212C6A019B008BE104 /* MagazineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineViewModel.swift; sourceTree = "<group>"; };
+		57B3BE232C6A02D5008BE104 /* ProductGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCell.swift; sourceTree = "<group>"; };
+		57B3BE252C6A02E0008BE104 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		57B3BE282C6A0E54008BE104 /* CustomCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCornerView.swift; sourceTree = "<group>"; };
+		57B3BE2A2C6A11BD008BE104 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		57B3BE392C6E044A008BE104 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +64,14 @@
 			isa = PBXGroup;
 			children = (
 				57B3BE132C69FDC1008BE104 /* MagazineApp.swift */,
-				57B3BE152C69FDC1008BE104 /* ContentView.swift */,
+				57B3BE152C69FDC1008BE104 /* MagazineView.swift */,
+				57B3BE252C6A02E0008BE104 /* ProductListCell.swift */,
+				57B3BE232C6A02D5008BE104 /* ProductGridCell.swift */,
+				57B3BE212C6A019B008BE104 /* MagazineViewModel.swift */,
+				57B3BE382C6CEEAD008BE104 /* Models */,
 				57B3BE172C69FDC2008BE104 /* Assets.xcassets */,
 				57B3BE192C69FDC2008BE104 /* Preview Content */,
+				57B3BE272C6A0E28008BE104 /* CustomViews */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -65,6 +82,23 @@
 				57B3BE1A2C69FDC2008BE104 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57B3BE272C6A0E28008BE104 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				57B3BE282C6A0E54008BE104 /* CustomCornerView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		57B3BE382C6CEEAD008BE104 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57B3BE2A2C6A11BD008BE104 /* ProductModel.swift */,
+				57B3BE392C6E044A008BE104 /* CellModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B3BE162C69FDC1008BE104 /* ContentView.swift in Sources */,
+				57B3BE242C6A02D5008BE104 /* ProductGridCell.swift in Sources */,
+				57B3BE2B2C6A11BD008BE104 /* ProductModel.swift in Sources */,
+				57B3BE262C6A02E0008BE104 /* ProductListCell.swift in Sources */,
+				57B3BE3A2C6E044A008BE104 /* CellModel.swift in Sources */,
+				57B3BE292C6A0E54008BE104 /* CustomCornerView.swift in Sources */,
+				57B3BE162C69FDC1008BE104 /* MagazineView.swift in Sources */,
 				57B3BE142C69FDC1008BE104 /* MagazineApp.swift in Sources */,
+				57B3BE222C6A019B008BE104 /* MagazineViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -279,6 +319,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +348,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

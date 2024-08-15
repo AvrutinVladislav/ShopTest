@@ -2,7 +2,7 @@
 //  MagazineApp.swift
 //  Magazine
 //
-//  Created by Vladislav Avrutin on 12.08.2024.
+//  Created by Vladislav Avrutin on 14.08.2024.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct MagazineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MagazineView()
         }
     }
 }
