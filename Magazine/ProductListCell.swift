@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ProductListCell: View {
     
-    @Binding var isAddedToCard: Bool
-    @Binding var isProductWeightInKg: Bool
     @Binding var model: Product
+    @Binding var cardList: [Product]
     
     var body: some View {
         VStack {
@@ -43,40 +42,41 @@ struct ProductListCell: View {
                     Text(model.title)
                         .font(.system(size: 12))
                         .foregroundStyle(.twoSix).opacity(0.8)
-                    if model.countryOfOrigin != "" && !isAddedToCard {
+                    if model.countryOfOrigin != "" && !model.isAddedToCard {
                         Text(model.countryOfOrigin)
                             .font(.system(size: 12))
                             .foregroundStyle(.twoSix).opacity(0.6)
                     }
                 }
                 VStack {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(.orderlist)
-                    })
-                    Button(action: {
-                        model.isFavorite.toggle()
-                    }, label: {
+                    Image(.orderlist)
+                        .onTapGesture {
+                            
+                        }
                         if model.isFavorite {
                             Image(.isFavorite)
+                                .onTapGesture {
+                                    model.isFavorite.toggle()
+                                }
                         } else {
                             Image(.isNotFavorite)
+                                .onTapGesture {
+                                    model.isFavorite.toggle()
+                                }
                         }
-                    })
                 }
                 .background {
                     Color.white.opacity(0.8)
                 }
             }
             Spacer()
-            if !isAddedToCard {
+            if !model.isAddedToCard {
                 priceAndAddedToCard()
             }
             else {
-                quantityOfAddedProduct()
+                QuantityOfAddedProduct(model: $model)
+                    .padding(.top, 10)
             }
-
         }
         .frame(height: 144)
     }
@@ -102,11 +102,10 @@ struct ProductListCell: View {
             }
             Spacer(minLength: 0)
             VStack {
-                Button(action: {
-                    isAddedToCard.toggle()
-                }, label: {
-                    Image(.addToCard)
-            })
+                Image(.addToCard)
+                    .onTapGesture {
+                        model.isAddedToCard.toggle()
+                    }
             }
         }
         .padding(.init(top: 4, leading: 4, bottom: 0, trailing: 4))
@@ -139,78 +138,4 @@ struct ProductListCell: View {
         .frame(width: 144, height: 144)
     }
     
-    @ViewBuilder private func quantityOfAddedProduct() -> some View {
-        VStack {
-            HStack {
-                Button {
-                    
-                } label: {
-                    Spacer()
-                    Text("Шт")
-                        .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
-                        .font(!isProductWeightInKg ? .system(size: 14, weight: .medium) : .system(size: 14))
-                        .foregroundStyle(!isProductWeightInKg ? .twoSix : .twoSix.opacity(0.6))
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity)
-                .background(!isProductWeightInKg ? .white : .productQuantity)
-                .clipShape(CustomCorner(radius: 8))
-                Button {
-                    
-                } label: {
-                    Spacer()
-                    Text("Кг")
-                        .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
-                        .font(isProductWeightInKg ? .system(size: 14, weight: .medium) : .system(size: 14))
-                        .foregroundStyle(isProductWeightInKg ? .twoSix : .twoSix.opacity(0.6))
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity)
-                .background(isProductWeightInKg ? .white : .productQuantity)
-                .clipShape(CustomCorner(radius: 8))
-            }
-            .frame(height: 28)
-            .background(Color.productQuantity)
-            .clipShape(CustomCorner(radius: 8))
-            
-            HStack {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "minus")
-                        .frame(width: 14, height: 2)
-                        .padding(11)
-                }
-                Spacer()
-                VStack {
-                    Text("0.1 кг")
-                        .font(.system(size: 16, weight: .bold))
-                    Text("~5.92 р")
-                        .font(.system(size: 12))
-                        .foregroundStyle(.white.opacity(0.8))
-                }
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "plus")
-                        .frame(width: 14, height: 2)
-                        .padding(11)
-                }
-            }
-            .frame(height: 28)
-            .padding(2)
-            .foregroundStyle(.white)
-            .background(Color.green)
-            .clipShape(CustomCorner(radius: 40))
-        }
-    }
 }
-
-//struct GoodsListCellPreviews: PreviewProvider {
-//    static var previews: some View {
-//        ProductListCell(isAddedToCard: .constant(false),
-//                      isProductWeightInKg: .constant(true),
-//                      model: Product(sale: true, newProduct: false, isFavorite: false, addedInList: false, blowToPrice: true, countryOfOrigin: "Франция 🇫🇷", image: "firstImage", title: "сыр Ламбер 500/0 230г сыр Ламбер 500/0 230г", rate: 4.1, rateAmount: 19, price: 99999, priceCent: 90, oldPrice: 190.89, saleAmount: 25))
-//    }
-//}

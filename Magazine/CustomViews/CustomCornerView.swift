@@ -2,7 +2,7 @@
 //  CustomCornerView.swift
 //  Magazine
 //
-//  Created by Vladislav Avrutin on 12.08.2024.
+//  Created by Vladislav Avrutin on 14.08.2024.
 //
 
 import SwiftUI

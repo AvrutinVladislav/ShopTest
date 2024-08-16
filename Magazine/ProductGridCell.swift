@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ProductGridCell: View {
     
-    @Binding var isAddedToCard: Bool
-    @Binding var isProductWeightInKg: Bool
-    
-    let model: Product
+    @Binding var model: Product
+    @Binding var cardList: [Product]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,7 +23,6 @@ struct ProductGridCell: View {
             Spacer()
             bottomPriceView()
         }
-
         .background(Color.white)
         .frame(width: 168, height: 278)
         .clipShape(CustomCorner(radius: 16, corners: [.topLeft, .topRight]))
@@ -35,46 +32,39 @@ struct ProductGridCell: View {
     
     @ViewBuilder private func configureGoodsCard() -> some View {
         VStack {
-            Group {
-                HStack(alignment: .top) {
-                    Image(.blowToPrices)
-                    Spacer()
-                    VStack {
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(.orderlist)
-                        })
-                        Button(action: {
-                            
-                        }, label: {
-                            if model.isFavorite {
-                                Image(.isFavorite)
-                            } else {
-                                Image(.isNotFavorite)
-                            }
-                        })
-                    }
-                    .background {
-                        Color.white.opacity(0.8)
-                    }
-                    .clipShape(CustomCorner(radius: 16, corners: .bottomLeft))
-                }
+            HStack(alignment: .top) {
+                Image(.blowToPrices)
                 Spacer()
-                HStack(spacing: 2) {
-                    Image(.star)
-                    Text(model.rate.description)
-                        .font(.system(size: 12))
-                        .foregroundStyle(.black).opacity(0.8)
-                    Spacer()
-                    if model.sale {
-                        Text("\(model.saleAmount.description)%")
-                            .foregroundStyle(.discount)
-                            .font(.system(size: 16, weight: .bold))
+                VStack {
+                    Image(.orderlist)
+                        .onTapGesture {
+                            model.addedInList.toggle()
+                        }
+                    if model.isFavorite {
+                        Image(.isFavorite)
+                    } else {
+                        Image(.isNotFavorite)
                     }
                 }
-                .padding(.init(top: 0, leading: 4, bottom: 0, trailing: 4))
+                .background {
+                    Color.white.opacity(0.8)
+                }
+                .clipShape(CustomCorner(radius: 16, corners: .bottomLeft))
             }
+            Spacer()
+            HStack(spacing: 2) {
+                Image(.star)
+                Text(model.rate.description)
+                    .font(.system(size: 12))
+                    .foregroundStyle(.black).opacity(0.8)
+                Spacer()
+                if model.sale {
+                    Text("\(model.saleAmount.description)%")
+                        .foregroundStyle(.discount)
+                        .font(.system(size: 16, weight: .bold))
+                }
+            }
+            .padding(.init(top: 0, leading: 4, bottom: 0, trailing: 4))
         }
         .frame(width: 168, height: 168)
         .background {
@@ -103,22 +93,13 @@ struct ProductGridCell: View {
             }
             Spacer(minLength: 0)
             VStack {
-                Button(action: {
-                    
-                }, label: {
-                    Image(.addToCard)
-            })
+                Image(.addToCard)
+                    .onTapGesture {
+                        model.isAddedToCard.toggle()
+                    }
             }
         }
         .padding(.init(top: 0, leading: 4, bottom: 4, trailing: 4))
         .frame(width: 168)
-    }
-}
-
-struct CellView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductGridCell(isAddedToCard: .constant(true),
-                      isProductWeightInKg: .constant(true),
-                      model: Product(sale: true, newProduct: false, isFavorite: false, addedInList: false, blowToPrice: true, countryOfOrigin: "Франция 🇫🇷", image: "firstImage", title: "сыр Ламбер 500/0 230г сыр Ламбер 500/0 230г", rate: 4.1, rateAmount: 19, price: 99999, priceCent: 90, oldPrice: 190.89, saleAmount: 25))
     }
 }

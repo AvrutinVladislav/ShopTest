@@ -13,7 +13,7 @@ struct Products: Codable, Hashable {
 
 struct Product: Codable, Hashable, Identifiable {
     var id = UUID()
-    var sale, newProduct, isFavorite, addedInList, blowToPrice: Bool
+    var sale, newProduct, isFavorite, addedInList, blowToPrice, isAddedToCard, isProductWeightInKg: Bool
     let countryOfOrigin, image, title: String
     var rate: Double
     var rateAmount, price, priceCent: Int

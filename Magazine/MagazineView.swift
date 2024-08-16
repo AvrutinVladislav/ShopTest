@@ -15,7 +15,7 @@ struct MagazineView: View {
     @State var isAddedToCard = false
     @State var isProductWeightInKg = true
     @State var cardList: [Product] = []
-    @State private var products: [Product] = []
+    @State var products: [Product] = []
     
     var body: some View {
         VStack {
@@ -23,7 +23,6 @@ struct MagazineView: View {
                 topButtons()
                     .padding(.init(top: 0, leading: 27, bottom: 0, trailing: 0))
                 Spacer()
-                
             }
             Divider()
                 .scaledToFill()
@@ -32,14 +31,14 @@ struct MagazineView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 168))], content: {
                         ForEach($products, id: \.self) { $item in
-                            ProductGridCell(isAddedToCard: $isAddedToCard, isProductWeightInKg: $isProductWeightInKg, model: item)
+                            ProductGridCell(model: $item, cardList: $cardList)
                         }
                     })
                 }
             }
             else {
-                List($products) { item in
-                    ProductListCell(isAddedToCard: $isAddedToCard, isProductWeightInKg: $isProductWeightInKg, model: item)
+                List($products) {$item in
+                    ProductListCell(model: $item, cardList: $cardList)
                         .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 8))
                         .listRowSeparator(.hidden)
                         .listRowSpacing(0)
@@ -59,8 +58,7 @@ struct MagazineView: View {
         HStack {
             Button(action: {
                 isDisplayAsGrid.toggle()
-            },
-                   label: {
+            }, label: {
                 if isDisplayAsGrid {
                     Image(.displayGrid)
                 } else {

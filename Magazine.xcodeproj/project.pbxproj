@@ -16,7 +16,7 @@
 		57B3BE262C6A02E0008BE104 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE252C6A02E0008BE104 /* ProductListCell.swift */; };
 		57B3BE292C6A0E54008BE104 /* CustomCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE282C6A0E54008BE104 /* CustomCornerView.swift */; };
 		57B3BE2B2C6A11BD008BE104 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE2A2C6A11BD008BE104 /* ProductModel.swift */; };
-		57B3BE3A2C6E044A008BE104 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE392C6E044A008BE104 /* CellModel.swift */; };
+		57B3BE3C2C6E20BB008BE104 /* QuantityOfAddedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3BE3B2C6E20BB008BE104 /* QuantityOfAddedProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		57B3BE252C6A02E0008BE104 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		57B3BE282C6A0E54008BE104 /* CustomCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCornerView.swift; sourceTree = "<group>"; };
 		57B3BE2A2C6A11BD008BE104 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
-		57B3BE392C6E044A008BE104 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		57B3BE3B2C6E20BB008BE104 /* QuantityOfAddedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityOfAddedProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				57B3BE282C6A0E54008BE104 /* CustomCornerView.swift */,
+				57B3BE3B2C6E20BB008BE104 /* QuantityOfAddedProduct.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -96,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				57B3BE2A2C6A11BD008BE104 /* ProductModel.swift */,
-				57B3BE392C6E044A008BE104 /* CellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,10 +174,10 @@
 				57B3BE242C6A02D5008BE104 /* ProductGridCell.swift in Sources */,
 				57B3BE2B2C6A11BD008BE104 /* ProductModel.swift in Sources */,
 				57B3BE262C6A02E0008BE104 /* ProductListCell.swift in Sources */,
-				57B3BE3A2C6E044A008BE104 /* CellModel.swift in Sources */,
 				57B3BE292C6A0E54008BE104 /* CustomCornerView.swift in Sources */,
 				57B3BE162C69FDC1008BE104 /* MagazineView.swift in Sources */,
 				57B3BE142C69FDC1008BE104 /* MagazineApp.swift in Sources */,
+				57B3BE3C2C6E20BB008BE104 /* QuantityOfAddedProduct.swift in Sources */,
 				57B3BE222C6A019B008BE104 /* MagazineViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
